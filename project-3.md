@@ -21,11 +21,11 @@ How to create an aws free tier account. click [here](https://www.youtube.com/wat
 
 This launches us into the instance as shown in the screenshot:
 
-[Image](./images/instance-launch.PNG)
+![Image](./images/instance-launch.PNG)
 
 We open our terminal and go to the location of the previously downloaded PEM file:
 
-[Image](./images/cd.PNG)
+![Image](./images/cd.PNG)
 
 To know how to download PEM File from __AWS__. Click [here](https://intellipaat.com/community/52119/how-to-download-a-pem-file-from-aws).
 
@@ -35,7 +35,7 @@ We connect to the instance from our ubuntu terminal using the command:
 
 This automatically connects to the instance
 
-[Image](./images/connect-instance.PNG)
+![Image](./images/connect-instance.PNG)
 
 When we are done connecting to the instance, we can proceed with setting up our project.
 
@@ -59,13 +59,13 @@ After doing the above, we can now install the __Node.js__ and __npm__ by running
 
 ```$ sudo apt-get install -y nodejs```
 
-[Image](./images/install-nodejs.PNG)
+![Image](./images/install-nodejs.PNG)
 
 To check the version the __node__:
 
 ```$ node -v```
 
-[Image](./iamges/../images/node-v.PNG)
+![Image](./iamges/../images/node-v.PNG)
 
 To check the version fo the __npm__:
 
@@ -75,7 +75,7 @@ Next we create a directory for our __To-Do Project__:
 
 ```$ mkdir Todo```
 
-[Image](./images/mkdir-todo.PNG)
+![Image](./images/mkdir-todo.PNG)
 
 We run the _ls_ command to verify that the directory was created:
 
@@ -91,7 +91,7 @@ We initialize the project by running the command:
 
 ```$ npm init```
 
-[Image](./image/../images/package-json.PNG)
+![Image](./image/../images/package-json.PNG)
 
 We run the _ls_ command to verify that __package.json__ was created
 
@@ -107,7 +107,7 @@ To use __Express__, we install it using __npm__:
 
 ```$ npm install express```
 
-[Image](./images/install-express.PNG)
+![Image](./images/install-express.PNG)
 
 Now create a file __index.js__ using the command:
 
@@ -119,7 +119,7 @@ Next, install the __dotenv__ module by running the command:
 
 ```$ npm install dotenv```
 
-[Image](./image/../images/express-dotenv.PNG)
+![Image](./image/../images/express-dotenv.PNG)
 
 Open the __index.js__ file by running the command:
 
@@ -155,11 +155,11 @@ We start our server to see if it works. Before we start the server, we need to b
 
 If there are no erros, we should see __""Server running on port 5000"__ in your terminal.
 
-[Image](./images/node-indexjs.PNG)
+![Image](./images/node-indexjs.PNG)
 
 We need to go to our instance security group and edit inbound rules and __add rules__
 
-[Image](./images/5000-inbound.PNG)
+![Image](./images/5000-inbound.PNG)
 
 We open our browser and put in the URL
 
@@ -167,7 +167,7 @@ We open our browser and put in the URL
 
 We should see __"welcome to Express"__
 
-[Image](./images/express-browser.PNG)
+![Image](./images/express-browser.PNG)
 
 Our __To-Do__ application should be able to do the following:
 
@@ -231,7 +231,7 @@ To install __Mongoose__, we make sure we are in the __Todo__ directory then run 
 
 ```$ npm install mongoose```
 
-[Image](./images/install-mongoose.PNG)
+![Image](./images/install-mongoose.PNG)
 
 We go ahead to create a folder __models__ by running the command:
 
@@ -245,7 +245,7 @@ Inside the __models__ folder, create a file named __todo.js__
 
 ```$ touch todo.js```
 
-[Image](./images/mkdir-models.PNG)
+![Image](./images/mkdir-models.PNG)
 
 We then open the file and paste the following codes:
 
@@ -267,7 +267,7 @@ const Todo = mongoose.model('todo', TodoSchema);
 module.exports = Todo;
 ```
 
-[Image](./images/vim-todojs.PNG)
+![Image](./images/vim-todojs.PNG)
 
 We then go to our __routes__ directory and update the __api.js__ file to be able to make use of the new model.
 
@@ -279,7 +279,7 @@ Open the __api.js__ file
 
 ```$ vim api.js```
 
-[Image](./images/vim-apijs.PNG)
+![Image](./images/vim-apijs.PNG)
 
 We copy and paste the following codes into the file:
 
@@ -317,7 +317,7 @@ Todo.findOneAndDelete({"_id": req.params.id})
 module.exports = router;
 ```
 
-[Images](./images/vim-apijs-new.PNG)
+![Images](./images/vim-apijs-new.PNG)
 
 Next we setup the __MongoDB__ Database.
 
@@ -329,19 +329,19 @@ To continue, we sign up [here](https://www.mongodb.com/atlas-signup-from-mlab).
 
 Follow the sign up process, select __AWS__ as the cloud provider, and choose a region near you.
 
-[Image](./images/mlab-mongodb.PNG)
+![Image](./images/mlab-mongodb.PNG)
 
 Go to __"Network access"__, select __"Allow access from anywhere"__. This is not secure but good for testing purposes.
 
-[Image](./images/mgdb-ip.PNG)
+![Image](./images/mgdb-ip.PNG)
 
 Then change the time of deleting the entry from 6 Hours to 1 Week.
 
-[Image](./images/mgdb2-ip.PNG)
+![Image](./images/mgdb2-ip.PNG)
 
 Create a __MongoDB__ database and collection inside __mLab__ by clicking on __"database"__, click on __"cluster0"__ and then open __"collections"__.
 
-[Image](./images/cluster.PNG)
+![Image](./images/cluster.PNG)
 
 In the __index.js__ file, we specified __process.env__ to access environment variables, but we are yet to create this file.
 
@@ -361,16 +361,16 @@ Make sure to update __"<username, <password, <network-address"__ and __<database
 
 To get the connection string, we click on __"cluster0"__ then click on __"connect"__
 
-[Image](./images/cluster0-connect.PNG)
+![Image](./images/cluster0-connect.PNG)
 
 Then we click on __"Mongodb drivers-connect your application..."__
 
-[Image](./images/cluster-connect2.PNG)
+![Image](./images/cluster-connect2.PNG)
 
 We then copy then connection string displayed into the __.env__ file.
 
-[Image-1a](./images/cluster-connect-nodejs.PNG)                
-[Image-1b](./images/vi-.env.PNG)
+![Image-1a](./images/cluster-connect-nodejs.PNG)                
+![Image-1b](./images/vi-.env.PNG)
 
  We need to update the __index.js__ to reflect the use of __.env__ so that __Node.js__ can connect to the database.
 
@@ -417,7 +417,7 @@ app.listen(port, () => {
 console.log(`Server running on port ${port}`)
 });
 ```
-[Image](./images/new-indexjs-vi.PNG)
+![Image](./images/new-indexjs-vi.PNG)
 
 It is more secure to use environment variables to store information so as to separate configuration and secret data from the application, instead of writing connection strings directly inside the __index.js__ application file.
 
@@ -427,7 +427,7 @@ We start our server by running the command:
 
 If the setup has no errors, we should see __" Database connected successfully"__.
 
-[Image](./images/node-indexjs-success.PNG)
+![Image](./images/node-indexjs-success.PNG)
 
 We now have our backend configured, but we need to test it.
 
@@ -447,11 +447,11 @@ Now open your Postman, create a POST request to the API
 
  Make sure to set the header __"content-type"__ and __"application/json"__:
 
- [Image](./images/header.PNG)
+ ![Image](./images/header.PNG)
 
  Then click on __body__. In the field below we key in a command that displays as a response on then next field with an __id__.
 
- [Image](./images/post-postman.PNG)
+ ![Image](./images/post-postman.PNG)
 
  Create a __GET__ request to your API on 
  
@@ -459,7 +459,7 @@ Now open your Postman, create a POST request to the API
  
   This request retrieves all existing records from out To-do application. The backend requests these records from the database and sends it us back as a response to __GET__ request.
 
-  [Image](./images/get-postman.PNG)
+  ![Image](./images/get-postman.PNG)
 
   To delete a task – you need to send its ID as a part of __DELETE__ request.
 
@@ -481,7 +481,7 @@ To do this, we will start by running the command in the __Todo__ directory:
 
 This will create a new folder in your Todo directory called client, where you will add all the react code.
 
-[Image](./images/client-create.PNG)
+![Image](./images/client-create.PNG)
 
 __Running a React Application__
 
@@ -493,13 +493,13 @@ We Install __"concurrently"__ by running the command:
 
  It is used to run more than one command simultaneously from the same terminal window.
 
- [Image](./images/install-concurrently.PNG)
+ ![Image](./images/install-concurrently.PNG)
 
  Next, we install __"nodemon"__. This is used to run and monitor the server. If there is any change in the server code, nodemon will restart it automatically and load the new changes.
 
  ```$ npm install nodemon --save-dev```
 
- [Image](./images/install-nodamon.PNG)
+ ![Image](./images/install-nodamon.PNG)
 
  Goto the _Todo_ directory, open the __package.json__ file.
 
@@ -514,7 +514,7 @@ We Install __"concurrently"__ by running the command:
 "dev": "concurrently \"npm run start-watch\" \"cd client && npm start\""
 },
 ```
-[Image](./images/package.json-edit.PNG)
+![Image](./images/package.json-edit.PNG)
 
 Change into the __client__ directory:
 
@@ -528,7 +528,7 @@ Add the key value pair in the package.json file
 
 ```"proxy": "http://localhost:5000"```
 
-[Image](./images/proxy.PNG)
+![Image](./images/proxy.PNG)
 
 The aim of adding the proxy to the file is to make it possible to access the application directly from the browser by simply calling the server url like __http://localhost:5000__ rather than always including the entire path like __http://localhost:5000/api/todos__.
 
@@ -546,7 +546,7 @@ In order to be able to access the application from the Internet you have to open
 This is done by clicking __edit inbound__ rules.
 
 
-[Images](./images/inbound-rules.PNG)
+![Images](./images/inbound-rules.PNG)
 
 __Creating your React Components__
 
@@ -632,7 +632,7 @@ return (
 export default Input
 ```
 
-[Image](./images/vim-inputjs.PNG)
+![Image](./images/vim-inputjs.PNG)
 
 To make use of __Axios__, which is a Promise based HTTP client for the browser and __node.js__.
 
@@ -644,7 +644,7 @@ Then run the command:
 
 ```$ npm install axios```
 
-[Image](./images/npm-install-axiom.PNG)
+![Image](./images/npm-install-axiom.PNG)
 
 We go to ‘__components__ directory:
 
@@ -685,7 +685,7 @@ return (
 
 export default ListTodo
 ```
-[Image](./images/vim-listodojs-components.PNG)
+![Image](./images/vim-listodojs-components.PNG)
 
 Open the __Todo.js__ file we copy and paste the following code:
 
@@ -775,7 +775,7 @@ export default App;
 
 We __Exit__.
 
-[Image](./iamges/../images/src-Appjs-edit.PNG)
+![Image](./iamges/../images/src-Appjs-edit.PNG)
 
 Next we open the __App.css__ file in the __src__ directory and paste the following codes:
 
@@ -871,7 +871,7 @@ margin-top: 0;
 
 We __Exit__.
 
-[Image](./images/src-app-css.PNG)
+![Image](./images/src-app-css.PNG)
 
 Still in the same  __src__ directory, we open the __index.css__ file:
 
@@ -908,14 +908,14 @@ In the __Todo__ directory, we then run the command:
 
 If there are no errors, there should be a message __"webfiles compiled successfully"__.
 
-[Image](./images/npm-run-dev.PNG)
+![Image](./images/npm-run-dev.PNG)
 
 
 To view this on the browser, we past the URL:
 
 ```http://<PublicIP>:3000```
 
-[Image](./images/todo-app-done.PNG)
+![Image](./images/todo-app-done.PNG)
 
 Our __To-do application__ is ready and functional with the functionality discussed earlier: creating a task, deleting a task and viewing all your tasks.
 
